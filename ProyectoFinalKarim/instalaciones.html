@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalaciones</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Instalaciones del Hotel</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <button onclick="mostrarInstalacion('piscinas')">Piscinas</button>
+            <button onclick="mostrarInstalacion('restaurante')">Restaurante</button>
+            <button onclick="mostrarInstalacion('miniGolf')">Mini Golf</button>
+        </nav>
+        
+        <div id="piscinas" class="instalacion" style="display:none;">
+            <h1>Piscinas</h1>
+            <h2>Disfruta de nuestras piscinas, abiertas todo el año. Tenemos piscinas climatizadas y al aire libre.</h2>
+            <div class="galeria">
+                <img src="imagenes/piscina1.jpg" alt="Imagen Piscina 1" >
+                <img src="imagenes/piscina2.jpg" alt="Imagen Piscina 2" >
+                <img src="imagenes/hotelPorFuera2.jpg" alt="Imagen Piscina 3" >
+            </div>
+        </div>
+
+        <div id="restaurante" class="instalacion" style="display:none;">
+            <h1>Restaurante</h1>
+            <h2>Prueba la exquisita gastronomía de nuestro restaurante, con opciones internacionales y locales.</h2>
+            <div class="galeria">
+                <img src="imagenes/buffet1.jpg" alt="Imagen del Buffet 1" >
+                <img src="imagenes/buffet2.jpg" alt="Imagen del Buffet 2" >
+            </div>
+        </div>
+
+        <div id="miniGolf" class="instalacion" style="display:none;">
+            <h1>Mini Golf</h1>
+            <h2>Diviértete en nuestro mini golf, perfecto para todas las edades.</h2>
+            <div class="galeria">
+                <img src="imagenes/minigolf1.jpg" alt="Imagen Minigolf 1" >
+                <img src="imagenes/minigolf2.jpg" alt="Imagen Minigolf 2" >
+            </div>
+        </div>
+    </div>
+    <button onclick="redirigir('paginaPrincipal.html')">Volver a la Página Principal</button>
+
+    <script>
+        function mostrarInstalacion(instalacionId) {
+            const instalaciones = document.querySelectorAll(".instalacion");
+            instalaciones.forEach(instalacion => instalacion.style.display = "none");
+            document.getElementById(instalacionId).style.display = "block";
+        }
+        function redirigir(pagina) {
+            window.location.href = pagina;
+        }
+    </script>
+</body>
+</html>

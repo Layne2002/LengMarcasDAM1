@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE articulos [
+   <!ELEMENT articulos (articulo,nombre,precio*,descripcion?)>
+   <!ELEMENT articulo (articulo*)>
+   <!ELEMENT nombre (#PCDATA)>
+   <!ELEMENT precio (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+]>
+
+<articulos>
+    <articulo nombre="Guitarra eléctrica" precio="456.00">
+        <descripcion>Les Paul oficial de 6 cuerdas</descripcion>
+    </articulo>
+
+    <articulo nombre="Cuerdas de guitarra" precio="6.99">
+        <descripcion>Cuerdas de reemplazo para una guitarra eléctrica, tamaño 0.11</descripcion>
+    </articulo>
+</articulos>

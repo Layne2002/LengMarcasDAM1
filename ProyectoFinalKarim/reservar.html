@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Habitación</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Reservar Habitación</h1>
+    </header>
+    <div class="container">
+        <form id="formularioReserva">
+            <div>
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required>
+            </div>
+            <div>
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div>
+                <label for="habitacion">Habitaciones Disponibles:</label>
+                <select id="habitacion" name="habitacion" onchange="mostrarImagenHabitacion()" required></select>
+            </div>
+            <div>
+                <img id="imagenHabitacion" src="a" alt="Imagen de la Habitación" style="display:none; max-width:100%;">
+            </div>
+            <div>
+                <label for="entrada">Fecha de Entrada:</label>
+                <input type="date" id="entrada" name="entrada" required>
+            </div>
+            <div>
+                <label for="salida">Fecha de Salida:</label>
+                <input type="date" id="salida" name="salida" required>
+            </div>
+            <button type="submit">Confirmar Reserva</button>
+        </form>
+        <div id="resguardo" style="display:none;">
+            <h2>Resguardo de Reserva</h2>
+            <p id="infoResguardo"></p>
+            <p>¡Gracias por elegirnos!</p>
+        </div>
+        <button onclick="redirigir('PaginaPrincipal.html')">Volver a la Página Principal</button>
+    </div>
+
+    <script>
+        const habitaciones = [
+            { numero: 101, tipo: '2 camas', precio: 70, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 102, tipo: 'cama doble', precio: 130, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 103, tipo: '2 camas', precio: 60, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 104, tipo: 'cama doble', precio: 110, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 105, tipo: '2 camas', precio: 50, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 106, tipo: 'cama doble', precio: 120, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 107, tipo: '2 camas', precio: 90, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 108, tipo: 'cama doble', precio: 160, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 109, tipo: 'camas', precio: 110, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 201, tipo: 'cama doble', precio: 100, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 202, tipo: 'camas', precio: 130, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 203, tipo: 'camas', precio: 123, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 204, tipo: 'cama doble', precio: 100, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 205, tipo: 'camas', precio: 60, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 206, tipo: 'cama doble', precio: 130, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 207, tipo: 'camas', precio: 90, imagen: 'imagenes/habitacion2Camas.jpg' }
+        ];
+
+        function llenarHabitacionesSelect() {
+            const select = document.getElementById("habitacion");
+            const habitacionesDisponibles = habitaciones;
+            habitacionesDisponibles.forEach(habitacion => {
+                const opcion = document.createElement("option");
+                opcion.value = `${habitacion.numero},${habitacion.precio},${habitacion.imagen}`;
+                opcion.textContent = `Habitación ${habitacion.numero} - ${habitacion.tipo} - €${habitacion.precio}/noche`;
+                select.appendChild(opcion);
+            });
+        }
+
+        function mostrarImagenHabitacion() {
+            const select = document.getElementById("habitacion");
+            const opcionSeleccionada = select.options[select.selectedIndex].value.split(",");
+            const imagenUrl = opcionSeleccionada[2];
+            const imagen = document.getElementById("imagenHabitacion");
+            imagen.src = imagenUrl;
+            imagen.style.display = "block";
+        }
+
+        document.getElementById("formularioReserva").addEventListener("submit", function(evento) {
+            evento.preventDefault();
+            const dni = document.getElementById("dni").value;
+            const nombre = document.getElementById("nombre").value;
+            const infoHabitacion = document.getElementById("habitacion").value.split(",");
+            const numeroHabitacion = infoHabitacion[0];
+            const precioHabitacion = parseFloat(infoHabitacion[1]);
+            const fechaEntrada = new Date(document.getElementById("entrada").value);
+            const fechaSalida = new Date(document.getElementById("salida").value);
+            const noches = (fechaSalida - fechaEntrada) / (1000 * 60 * 60 * 24);
+            const precioTotal = noches * precioHabitacion;
+
+            const infoResguardo = `
+                Nombre Completo: ${nombre}<br>
+                DNI: ${dni}<br>
+                Número de Habitación: ${numeroHabitacion}<br>
+                Fecha de Entrada: ${fechaEntrada.toLocaleDateString()}<br>
+                Fecha de Salida: ${fechaSalida.toLocaleDateString()}<br>
+                Precio Total: €${precioTotal.toFixed(2)}
+                Se pagará al entrar en el hotel
+            `;
+            
+            document.getElementById("infoResguardo").innerHTML = infoResguardo;
+            document.getElementById("resguardo").style.display = "block";
+        });
+        function redirigir(pagina) {
+            window.location.href = pagina;
+        }
+        window.onload = llenarHabitacionesSelect;
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Definición del elemento Clientes -->
+  <xs:element name="Clientes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Cliente" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoCliente" type="CodigoClienteType"/>
+              <xs:element name="Direccion" type="DireccionType"/>
+              <xs:element name="Telefonos" type="TelefonosType"/>
+              <xs:element name="Facturas" type="FacturasType"/>
+              <xs:choice>
+                <xs:element name="Empresa" type="EmpresaType"/>
+                <xs:element name="Particular" type="ParticularType"/>
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Tipos de datos personalizados -->
+  <xs:simpleType name="CodigoClienteType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z][0-9]{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="DireccionType">
+    <xs:sequence>
+      <xs:element name="NombreVia" type="xs:string"/>
+      <xs:element name="NumeroVia" type="xs:string"/>
+      <xs:element name="Localidad" type="xs:string"/>
+      <xs:element name="Provincia" type="xs:string"/>
+      <xs:element name="CodigoPostal" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TelefonoType">
+    <xs:sequence>
+      <xs:element name="TipoTelefono" type="xs:string"/>
+      <xs:element name="Numero" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TelefonosType">
+    <xs:sequence>
+      <xs:element name="Telefono" type="TelefonoType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FacturasType">
+    <xs:sequence>
+      <xs:element name="Factura" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <!-- Definir estructura de las facturas aquí -->
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EmpresaType">
+    <xs:sequence>
+      <xs:element name="Contacto" type="xs:string"/>
+      <xs:element name="RazonSocial" type="xs:string"/>
+      <xs:element name="Web" type="xs:anyURI" minOccurs="0"/>
+      <xs:element name="CIF" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ParticularType">
+    <xs:sequence>
+      <xs:element name="Nombre" type="xs:string"/>
+      <xs:element name="Apellidos" type="xs:string"/>
+      <xs:element name="NIF" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Definición del elemento Facturas -->
+  <xs:element name="Facturas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Factura" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Fecha" type="xs:date"/>
+              <xs:element name="NumeroFactura" type="NumeroFacturaType"/>
+              c
+              <xs:element name="Observaciones" type="xs:string" minOccurs="0"/>
+              <xs:element name="Productos" type="ProductosType"/>
+              <xs:element name="Cuantia" type="CuantiaType"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Tipos de datos personalizados -->
+  <xs:simpleType name="NumeroFacturaType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(EMP|PAR)-\d{2}-\d{4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="FormaPagoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Paypal"/>
+      <xs:enumeration value="Bizum"/>
+      <xs:enumeration value="Efectivo"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ProductoType">
+    <xs:sequence>
+      <xs:element name="Cantidad" type="xs:int"/>
+      <xs:element name="Nombre" type="xs:string"/>
+      <xs:element name="CodigoProducto" type="xs:string"/>
+      <xs:element name="PrecioUnitario" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ProductosType">
+    <xs:sequence>
+      <xs:element name="Producto" type="ProductoType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CuantiaType">
+    <xs:sequence>
+      <xs:element name="Subtotal" type="xs:decimal"/>
+      <xs:element name="IVA" type="xs:decimal"/>
+      <xs:element name="Total" type="xs:decimal"/>
+      <xs:attribute name="moneda" type="xs:string" default="euros"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

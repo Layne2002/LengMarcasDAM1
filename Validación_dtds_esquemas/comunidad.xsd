@@ -1,0 +1,22 @@
+<!--xmlns:xs="http://www.w3.org/2001/XMLSchema"-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/comunidad" xmlns="http://www.example.com/comunidad">
+  <xs:element name="comunidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="vecino" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_vecino" type="xs:string"/>
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="apellidos" type="xs:string"/>
+              <xs:element name="portal" type="xs:string"/>
+              <xs:element name="piso_letra" type="xs:string"/>
+              <xs:element name="codigo_cuenta_corriente" type="xs:string"/>
+              <xs:element name="cargo" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

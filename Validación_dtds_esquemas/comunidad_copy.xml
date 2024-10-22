@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comunidad xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="comunidad.xsd">
+  <vecino>
+    <codigo_vecino>1</codigo_vecino>
+    <nombre>Juan</nombre>
+    <apellidos>Juan Juan</apellidos>
+    <portal>1</portal>
+    <piso_letra>C</piso_letra>
+    <codigo_cuenta_corriente>234567890</codigo_cuenta_corriente>
+    <cargo>Presidente</cargo>
+  </vecino>
+  <vecino>
+    <codigo_vecino>2</codigo_vecino>
+    <nombre>Alberto</nombre>
+    <apellidos>Alberto Alberto</apellidos>
+    <portal>1</portal>
+    <piso_letra>B</piso_letra>
+    <codigo_cuenta_corriente>123457890</codigo_cuenta_corriente>
+    <cargo>Vicepresidente</cargo>
+  </vecino>
+  <vecino>
+    <codigo_vecino>3</codigo_vecino>
+    <nombre>Paula</nombre>
+    <apellidos>Paula</apellidos>
+    <portal>2</portal>
+    <piso_letra>A</piso_letra>
+    <codigo_cuenta_corriente>1234567890</codigo_cuenta_corriente>
+    <cargo>Secretaria</cargo>
+  </vecino>
+  <vecino>
+    <codigo_vecino>4</codigo_vecino>
+    <nombre>Alicia</nombre>
+    <apellidos>Alicia Alicia</apellidos>
+    <portal>2</portal>
+    <piso_letra>F</piso_letra>
+    <codigo_cuenta_corriente>12901234</codigo_cuenta_corriente>
+    <cargo>Vocal</cargo>
+  </vecino>
+</comunidad>

@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "no" ?>
+<!DOCTYPE almacen >
+<articulo>
+       <nombre_articulo>ordenador</nombre_articulo>
+       <precio>699.99€</precio>
+       <existencias>14</existencias>
+       <seccion>Informática</seccion>
+</articulo>
+<articulo>
+       <nombre_articulo>Albondigas</nombre_articulo>
+       <precio>4.99€</precio>
+       <existencias>73</existencias>
+       <seccion>Carne</seccion>
+</articulo>
+<articulo>
+       <nombre_articulo>Calcetines</nombre_articulo>
+       <precio>2.99€</precio>
+       <existencias>29</existencias>
+       <seccion>Ropa</seccion>
+</articulo>

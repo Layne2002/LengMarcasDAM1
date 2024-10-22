@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paraiso</title>
+    
+    <link rel="stylesheet" href="estilo.css">
+    
+    
+</head>
+<body>
+    <header>
+        <h1>HOTEL PARAISO</h1>
+    </header>
+    <div class="container">
+        <div class="galeria">
+            <img src="imagenes/hotelPorFuera1.jpg" alt="Imagen del Hotel 1" onclick="mostrarMensaje()">
+            <img src="imagenes/hotelPorFuera2.jpg" alt="Imagen del Hotel 2" onclick="mostrarMensaje()">
+            <img src="imagenes/Habitacion1.jpg" alt="Imagen del Hotel 3" onclick="mostrarMensaje()">
+            <img src="imagenes/hotelporDentro.jpg" alt="Imagen del Hotel 4" onclick="mostrarMensaje()">
+        </div>
+        <div>
+            <button onclick="redirigir('reservar.html')">Reservar Habitación</button>
+            <button onclick="redirigir('contacto.html')">Contactar Soporte</button>
+            <button onclick="redirigir('instalaciones.html')">Nuestras Instalaciones</button>
+            <button onclick="redirigir('calcular.html')">Calcular Precio Estancia</button>
+            <button onclick="redirigir('acercaDe.html')">Acerca de</button>
+        
+        </div>
+    </div>
+
+    <script>
+        function redirigir(pagina) {
+            window.location.href = pagina;
+        }
+    </script>
+</body>
+</html>

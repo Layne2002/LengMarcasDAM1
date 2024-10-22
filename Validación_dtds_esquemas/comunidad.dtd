@@ -1,0 +1,11 @@
+<!DOCTYPE comunidad [
+<!ELEMENT comunidad (vecino+)>
+<!ELEMENT vecino (codigo_vecino, nombre, apellidos, portal, piso_letra, codigo_cuenta_corriente, cargo)>
+<!ELEMENT codigo_vecino (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT portal (#PCDATA)>
+<!ELEMENT piso_letra (#PCDATA)>
+<!ELEMENT codigo_cuenta_corriente (#PCDATA)>
+<!ELEMENT cargo (#PCDATA)>
+]>
