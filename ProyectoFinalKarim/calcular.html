@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora</h1>
+    </header>
+    
+    <h2>Aquí podrá calcular fácilmente cuánto le costaría la estancia<br>
+        introduciendo la cantidad de noches y seleccionando la habitación que tiene pensada</h2>
+    <form id="calculadora" style="margin-top:2%;">
+        <input type="text" id="numNoches" placeholder="Número de noches" required>
+        <select id="precioHabitacion" required>
+            <option value="" disabled selected>Seleccione una habitación</option>
+        </select>
+        <input type="submit" value="Calcular">
+    </form>
+    
+    <div id="resultado"></div>
+    <button onclick="redirigir('paginaPrincipal.html')">Volver a la Página Principal</button>
+    <script>
+        const habitaciones = [
+            { numero: 101, tipo: '2 camas', precio: 70, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 102, tipo: 'cama doble', precio: 130, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 103, tipo: '2 camas', precio: 60, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 104, tipo: 'cama doble', precio: 110, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 105, tipo: '2 camas', precio: 50, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 106, tipo: 'cama doble', precio: 120, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 107, tipo: '2 camas', precio: 90, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 108, tipo: 'cama doble', precio: 160, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 109, tipo: 'camas', precio: 110, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 201, tipo: 'cama doble', precio: 100, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 202, tipo: 'camas', precio: 130, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 203, tipo: 'camas', precio: 123, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 204, tipo: 'cama doble', precio: 100, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 205, tipo: 'camas', precio: 60, imagen: 'imagenes/habitacion2Camas.jpg' },
+            { numero: 206, tipo: 'cama doble', precio: 130, imagen: 'imagenes/habitacionCamaDoble.jpg' },
+            { numero: 207, tipo: 'camas', precio: 90, imagen: 'imagenes/habitacion2Camas.jpg' }
+        ];
+
+        function populateHabitacionesSelect() {
+            const select = document.getElementById('precioHabitacion');
+            habitaciones.forEach(habitacion => {
+                const option = document.createElement('option');
+                option.value = habitacion.precio;
+                option.textContent = `Habitación ${habitacion.numero} - ${habitacion.tipo} - €${habitacion.precio}/noche`;
+                select.appendChild(option);
+            });
+        }
+
+        function calculadora(noches, precioPorNoche) {
+            if (noches < 0) {
+                return "Error: El número de noches no puede ser negativo";
+            } else {
+                return noches * precioPorNoche;
+            }
+        }
+
+        document.getElementById("calculadora").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const numNoches = parseFloat(document.getElementById("numNoches").value);
+            const precioPorNoche = parseFloat(document.getElementById("precioHabitacion").value);
+            const resultado = calculadora(numNoches, precioPorNoche);
+            document.getElementById("resultado").innerText = "El precio sería de: " + resultado + " Euros";
+        });
+        function redirigir(pagina) {
+            window.location.href = pagina;
+        }
+        window.onload = populateHabitacionesSelect;
+    </script>
+</body>
+</html>

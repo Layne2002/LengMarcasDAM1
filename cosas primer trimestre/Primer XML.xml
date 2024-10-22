@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Este es un XML sobre un instituto imaginario que casualmente tiene el mismo nombre que el nuestro, hecho por Karim Zinnatullin-->
+<Instituto>
+    <cursos nombre="Cursos que se ofrecen:">
+        <cursos nombre="Administración de Finanzas"/>
+        <cursos nombre="Desarrollo de Aplicaciones Multiplataforma"/>
+        <cursos nombre="Desarrollo de aplicaciones en Web"/>
+        <cursos nombre="Administracion de Sistemas Informaticos en Redes"/>
+        </cursos>
+    <libros nombre="Libros a la venta (preguntar en secretaría):">
+        <libros nombre="Programa por tu cuente desde cero"/>
+        <libros nombre="Bases de datos para novatos"/>
+        <libros nombre="Formacion y Orientacion laboral"/>
+        <libros nombre="Lenguaje de marcas, La Mejor Asignatura"/>
+    </libros>
+    <prestaciones nombres="Prestaciones del instituto:">
+        <prestaciones nombre="Un baño en cada planta"/>
+        <prestaciones nombre="Biblioteca ámplia"/>
+        <prestaciones nombre="Comedor de 13:30 a 15:30"/>
+        <prestaciones nombre="Aparcamiento para profesores y alumnos"/>
+    </prestaciones>
+    <personal nombre="Personal del instituto:">
+        <personal nombre="Director: Alfredo Zafra Rubio"/>
+        <personal nombre="Sectretaría: Eustaquio Enrique García Habichuela"/>
+        <personal nombre="Jefa de estudios: Azuzena Ramos Gordillo"/>
+        <personal nombre="Limpiador: Carlos Fabio Manuel Ruíz López"/>
+    </personal>
+</Instituto>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Flex</title>
+    <style>
+
+    .aquamarine{background-color:rgb(120, 230, 193);}
+    .blue{background-color:blue;}
+    .violet{background-color: purple;}
+    .black{background-color: black;}
+    .yellow{background-color:   #f1c40f;}
+    .orange{background-color: orange;order:10;}
+
+
+    html,body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+        color: white;
+        text-align:center;
+
+    }
+    .contenedor{  
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-direction: row;        
+    }
+    .uno,.tres,.cuatro,.seis{
+        flex-grow:1;
+    }
+.dos{
+    flex-grow:3;
+}
+.cinco{
+    flex-grow:5;
+}
+    
+</style>
+
+</head>
+<body>
+    <div class="contenedor">
+        <div class="aquamarine uno">uno🍇</div>
+        <div class="blue dos">dos🍈</div>
+        <div class="violet tres">tres🍋</div>
+        <div class="black cuatro">cuatro🍑</div>
+        <div class="yellow cinco">cinco🍎</div>
+        <div class="orange seis">seis🍏</div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Flex</title>
+    <style>
+
+    .aquamarine{background-color:rgb(120, 230, 193);}
+    .blue{background-color:blue;}
+    .violet{background-color: purple;}
+    .black{background-color: black;}
+    .yellow{background-color:   #f1c40f;}
+    .orange{background-color: orange;}
+
+
+    html,body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-size:30px;
+        color: white;
+        text-align:center;
+        
+    }
+    .contenedor1{  
+        float:left;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: stretch;
+        align-items: stretch;
+        flex-direction: column;   
+        height:calc(100% - 20px);
+        border:10px solid red;
+        border-right-width: 0;
+        width:calc(50% - 20px)
+    }
+    .contenedor2{ 
+        order:2; 
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: stretch;
+        align-items: stretch;
+        flex-direction: column;   
+        height:calc(100% - 20px);
+        border:10px solid red;
+        width:calc(50% - 20px);
+        border-left-width: 0;
+    }
+    
+    
+    .contenedor2>div{
+        flex:1;
+    }
+    .uno,.dos,.tres{
+        height:30%;
+    }
+    .cuatro{
+        height:10%;
+    }
+    
+</style>
+
+</head>
+<body>
+    <div class="contenedor1">
+        <div class="aquamarine uno">uno🍇</div>
+        <div class="blue dos">dos🍈</div>
+        <div class="violet tres">tres🍋</div>
+        <div class="black cuatro">cuatro🍑</div>        
+    </div>
+    <div class="contenedor2">
+        <div class="yellow ">cinco🍎</div>
+        <div class="orange ">seis🍏</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--Autor: Karim Zinnatullin-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validación Formularios</title>
+<style>
+    .error {
+        color: red;
+    }
+    body{
+        background-color: antiquewhite;
+    }
+</style>
+</head>
+<body>
+
+<h1>Validación Formularios</h1>
+<h2>Karim Zinnatullin</h2>
+
+<form id="formulario">
+    <div>
+        <label for="nombre">Nombre y Apellidos:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+    </div>
+    <div>
+        <label for="telefono">Teléfono:</label><br>
+        <input type="text" id="telefono" name="telefono"><br>
+    </div>
+    <div>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+    </div>
+    <div>
+        <button type="button" onclick="validar()">Validar</button>
+        <button type="button" onclick="borrar()">Borrar</button>
+    </div>
+</form>
+
+<p id="mensaje" class="error"></p>
+
+<script>
+    function validar() {
+        var nombre = document.getElementById("nombre").value;
+        var telefono = document.getElementById("telefono").value;
+        var email = document.getElementById("email").value;
+        var mensaje = "";
+
+        if (nombre.length < 6 || !nombre.includes(" ")) {
+            mensaje += "¡¡¡El nombre debe tener al menos SEIS caracteres y contener un espacio en blanco!!!<br>";
+        }
+
+        if (!/^\d{8}$/.test(telefono)) {
+            mensaje += "¡¡¡El teléfono debe tener 8 dígitos numéricos!!!<br>";
+        }
+
+        if (email.length < 8 || !email.includes("@") || !email.includes(".")) {
+            mensaje += "¡¡¡El email debe tener al menos 8 caracteres y contener un '@' y un '.'!!!<br>";
+        }
+
+        document.getElementById("mensaje").innerHTML = mensaje;
+    }
+
+    function borrar() {
+        document.getElementById("formulario").reset();
+        document.getElementById("mensaje").innerHTML = "";
+    }
+</script>
+
+</body>
+</html>

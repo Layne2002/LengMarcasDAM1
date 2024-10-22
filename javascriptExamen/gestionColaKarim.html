@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de Cola</title>
+<style>
+    html{
+        background-color: antiquewhite;
+    }
+    INPUT{
+        background-color:bisque;
+    }
+    button {
+        margin: 5px;
+        color:blue;
+        background-color:cornflowerblue;
+    }
+    
+</style>
+</head>
+<body>
+<h2>Cola de Personas</h2>
+<div>
+    <input type="text" id="nombre" placeholder="Nombre de la persona">
+    <button onclick="anadirPersona()">Añadir Persona</button>
+</div>
+<div>
+    <button onclick="atenderCola()">Atender Cola</button>
+    <button onclick="abandonar()">Abandonar</button>
+</div>
+<div>
+    <input type="text" id="nombreConsulta" placeholder="Nombre a consultar">
+    <button onclick="consultarTurno()">Consultar Turno</button>
+</div>
+<div>
+    <button onclick="mostrarCola()">Mostrar Cola</button>
+</div>
+<div id="mensaje"></div>
+
+<script>
+    const cola = [];
+    const mensajeDiv = document.getElementById("mensaje");
+
+    function anadirPersona() {
+        const nombre = document.getElementById("nombre").value;
+        if (nombre !== "") {
+            cola.push(nombre);
+            mostrarMensaje(nombre + " se ha añadido a la cola.");
+        }
+    }
+
+    function atenderCola() {
+        if (cola.length > 0) {
+            const persona = cola.shift();
+            mostrarMensaje(persona + " ha sido atendido/a.");
+        } else {
+            mostrarMensaje("No hay personas en la cola.");
+        }
+    }
+
+    function abandonar() {
+        if (cola.length > 0) {
+            const persona = cola.shift();
+            mostrarMensaje(persona + " ha abandonado la cola.");
+        } else {
+            mostrarMensaje("No hay personas en la cola.");
+        }
+    }
+
+    function consultarTurno() {
+        const nombre = document.getElementById("nombreConsulta").value;
+        let personasDelante = 0;
+        for (let i = 0; i < cola.length; i++) {
+            if (cola[i] !== nombre) {
+                personasDelante++;
+            } else {
+                break;
+            }
+        }
+        mostrarMensaje("Personas por delante de " + nombre + ": " + personasDelante);
+    }
+
+    function mostrarCola() {
+        if (cola.length > 0) {
+        let mensaje = "Cola de personas:<br>";
+        for (let i = 0; i < cola.length; i++) {
+            mensaje += cola[i] + "<br>";
+        }
+        mostrarMensaje(mensaje);
+        } else {
+            mostrarMensaje("No hay personas en la cola.");
+        }
+    }
+
+    function mostrarMensaje(texto) {
+        mensajeDiv.innerHTML = texto;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE elementos SYSTEM "Ejercicio1.dtd">
+<elementos>
+    <elemento>
+        <a>a</a>
+        <b>b1</b>
+        <b>b2</b>
+        <d>d1</d>
+        <e>e</e>
+    </elemento>
+
+    <elemento>
+        <a>a</a>
+        <d>d1</d>
+        <d>d2</d>
+    </elemento>
+
+    <elemento>
+        <a>a</a>
+        <c>c1</c>
+        <d>d1</d>
+        <d>d2</d>
+        <d>d3</d>
+        <e>e</e>
+    </elemento>
+
+    <elemento>
+        <a>a</a>
+        <b>b1</b>
+        <d>d1</d>
+
+    </elemento>
+
+    <elemento>
+        <a>a</a>
+        <c>c1</c>
+        <d>d1</d>
+        <d>d2</d>
+        <d>d3</d>
+        <e>e</e>
+    </elemento>
+</elementos>

@@ -1,0 +1,37 @@
+<inventario>
+    <producto codigo="P1">
+        <peso unidad="kg">10</peso>
+        <nombre>Ordenador</nombre>
+        <lugar edificio="B">
+            <aula>10</aula>
+        </lugar>
+    </producto>
+    <producto codigo="P2">
+        <peso unidad='Kg'>5</peso>
+        <nombre>Switch</nombre>
+        <lugar edificio="A">
+            <aula>6</aula>
+        </lugar>
+    </producto>
+    <producto codigo="P3">
+        <peso unidad="kg">15</peso>
+        <nombre>mesa</nombre>
+        <lugar edificio="B">
+            <aula>6</aula>
+        </lugar>
+    </producto>
+    <producto codigo="P4">
+        <peso unidad="kg">55</peso>
+        <nombre>Frigorifico</nombre>
+        <lugar edificio="A">
+            <aula>5</aula>
+        </lugar>
+    </producto>
+    <producto codigo="P5">
+        <peso unidad="kg">1</peso>
+        <nombre>teclado</nombre>
+        <lugar edificio="B">
+            <aula>2</aula>
+        </lugar>
+    </producto>
+</inventario>

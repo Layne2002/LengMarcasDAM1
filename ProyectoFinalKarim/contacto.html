@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Atención al Cliente</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Contacto Atención al Cliente</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <button onclick="mostrarFormulario('cancelar')">Cancelar Reserva</button>
+            <button onclick="mostrarFormulario('cambiarFecha')">Cambiar Fecha de Reserva</button>
+            <button onclick="mostrarFormulario('consultarInstalaciones')">Consultar Instalaciones</button>
+            <button onclick="mostrarFormulario('informacionContacto')">Información de Contacto</button>
+        </nav>
+        
+        <div id="cancelar" class="formulario" style="display:none;">
+            <h2>Cancelar Reserva</h2>
+            <form id="cancelarForm">
+                <div>
+                    <label for="dniCancelar">DNI:</label>
+                    <input type="text" id="dniCancelar" name="dni" required>
+                </div>
+                <div>
+                    <label for="motivoCancelar">Motivo de Cancelación:</label>
+                    <textarea id="motivoCancelar" name="motivo" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="mensajeCancelar" class="mensaje" style="display:none;">
+                <p>Gracias por su tiempo. En cuanto cancelémos su reserva, contactarémos con usted</p>
+            </div>
+        </div>
+
+        <div id="cambiarFecha" class="formulario" style="display:none;">
+            <h2>Cambiar Fecha de Reserva</h2>
+            <form id="cambiarFechaForm">
+                <div>
+                    <label for="dniCambiar">DNI:</label>
+                    <input type="text" id="dniCambiar" name="dni" required>
+                </div>
+                <div>
+                    <label for="nuevaEntrada">Nueva Fecha de Entrada:</label>
+                    <input type="date" id="nuevaEntrada" name="entrada" required>
+                </div>
+                <div>
+                    <label for="nuevaSalida">Nueva Fecha de Salida:</label>
+                    <input type="date" id="nuevaSalida" name="salida" required>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="mensajeCambiar" class="mensaje" style="display:none;">
+                <p>Gracias. Su solicitud de cambio de fecha se está procesando.</p>
+                <p>En cuanto terminémos de procesarlo, le emitirémos un resguardo nuevo.</p>
+            </div>
+        </div>
+
+        <div id="consultarInstalaciones" class="formulario" style="display:none;">
+            <h2>Consultar Instalaciones</h2>
+            <button onclick="window.location.href='instalaciones.html'">Ver Instalaciones</button>
+        </div>
+
+        <div id="informacionContacto" class="formulario" style="display:none;">
+            <h2>Información de Contacto</h2>
+            <p>Teléfono: 123-456-789</p>
+            <p>Horario de Disponibilidad: 9:00 AM - 6:00 PM de lunes a viernes y de 9:00 AM - 15:00 PM los sábados</p>
+        </div>
+        <button onclick="redirigir('paginaPrincipal.html')">Volver a la Página Principal</button>
+        </div>
+       
+    <script>
+        function mostrarFormulario(formularioId) {
+            const formularios = document.querySelectorAll(".formulario");
+            formularios.forEach(formulario => formulario.style.display = 'none');
+            const mensajes = document.querySelectorAll(".mensaje");
+            mensajes.forEach(mensaje => mensaje.style.display = "none");
+            document.getElementById(formularioId).style.display = "block";
+        }
+
+        document.getElementById("cancelarForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("mensajeCancelar").style.display = "block";
+        });
+
+        document.getElementById("cambiarFechaForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("mensajeCambiar").style.display = "block";
+        });
+        function redirigir(pagina) {
+            window.location.href = pagina;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Autor: Karim Zinantullin-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios básicos JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+        #resultados {
+            margin-top: 20px;
+        }
+        button{
+            margin-top: 10px;
+        }
+        div{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios básicos JS</h1>
+    <div>
+        <label for="numero">Introduce un número:</label>
+        <input type="number" id="numero">
+        <button onclick="par()">Comprobar si es par</button>
+    </div>
+
+    <div>
+        <label for="base">Base:</label>
+        <input type="number" id="base">
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura">
+        <button onclick="areaRectangulo()">Calcular área del rectángulo</button>
+    </div>
+    <div>
+        <label for="dni">Introduce el DNI (sin letra):</label>
+        <input type="text" id="dni">
+        <label for="letra">Letra:</label>
+        <input type="text" id="letra">
+        <button onclick="letraDNI()">Comprobar letra DNI</button>
+    </div>
+    <div id="resultados">
+        <p id="parOImpar"></p>
+        <p id="areaRectangulo"></p>
+        <p id="letraCorrecta"></p>
+    </div>
+
+    <script>
+        function par() {
+            var num = parseInt(document.getElementById("numero").value);
+            var resultado = num % 2 === 0 ? "Es par" : "Es impar";
+            document.getElementById("parOImpar").innerText = resultado;
+        }
+
+        function areaRectangulo() {
+            var base = parseInt(document.getElementById("base").value);
+            var altura = parseInt(document.getElementById("altura").value);
+            var area = base * altura;
+            document.getElementById("areaRectangulo").innerText = "El área es: " + area;
+        }
+
+        function letraDNI() {
+            var dni = document.getElementById("dni").value;
+            var letra = document.getElementById("letra").value.toUpperCase();
+            var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            var letraCorrecta = letras.charAt(dni % 23);
+            
+            if (letraCorrecta === letra) {
+                document.getElementById("letraCorrecta").innerText = "La letra es correcta";
+            } else {
+                document.getElementById("letraCorrecta").innerText = "NO!!!! La letra correcta es: " + letraCorrecta;
+            }
+        }
+    </script>
+</body>
+</html>

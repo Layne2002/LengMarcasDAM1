@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parking xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Ejercicio3.xsd">
+  <vehiculo>
+        <TipoVehiculo>coche</TipoVehiculo>
+        <matricula>QEF4467</matricula>
+        <nombre>Juan Cuesta</nombre>
+        <socio>true</socio>
+  </vehiculo>
+  <vehiculo>
+        <TipoVehiculo>patinete</TipoVehiculo>
+        <matricula>KLO7387</matricula>
+        <nombre>Mariví Bilbao</nombre>
+        <socio>false</socio>
+  </vehiculo>
+</parking>

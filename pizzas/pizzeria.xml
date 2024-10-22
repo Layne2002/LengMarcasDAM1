@@ -1,0 +1,48 @@
+<!DOCTYPE pizzas SYSTEM "pizzeria.dtd">
+<pizzas>
+
+  <pizza nombre="Barbacoa" precio="8">
+
+    <ingrediente nombre="Salsa Barbacoa" />
+
+    <ingrediente nombre="Mozzarella" />
+
+    <ingrediente nombre="Pollo" />
+
+    <ingrediente nombre="Bacon" />
+
+    <ingrediente nombre="Ternera" />
+
+  </pizza>
+
+  <pizza nombre="Margarita" precio="6">
+
+    <ingrediente nombre="Tomate" />
+
+    <ingrediente nombre="Jamón" />
+
+    <ingrediente nombre="Queso" />
+
+  </pizza>
+    <pizza nombre="Carbonara" precio="7">
+
+    <ingrediente nombre="Nata" />
+
+    <ingrediente nombre="Champiñones" />
+
+    <ingrediente nombre="Jamón" />
+
+    <ingrediente nombre="cebolla" />
+
+  </pizza>
+    <pizza nombre="Pepperoni" precio="8">
+
+    <ingrediente nombre="Tomate" />
+
+    <ingrediente nombre="Pepperoni" />
+
+    <ingrediente nombre="Queso" />
+
+  </pizza>
+
+</pizzas>

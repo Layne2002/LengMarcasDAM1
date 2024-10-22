@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Flex</title>
+    <style>
+
+    .aquamarine{background-color:rgb(120, 230, 193);justify-content: start;}
+    .blue{background-color:blue;}
+    .violet{background-color: purple;}
+    .black{background-color: black;}
+    .yellow{background-color:   #f1c40f;}
+    .orange{background-color: orange;}
+    .red{background-color: rgb(238, 67, 67);}
+    .grey{background-color: grey;}
+    .greenyellow{background-color: rgb(155, 219, 58);}
+    .green{background-color: green;justify-content: flex-end;}
+
+    html,body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 30px;
+        color: white;
+        text-align:center;
+
+    }
+    .contenedor{
+        display: flex;
+        
+        align-items: stretch;
+        flex-direction:column;
+        gap:6.59%;
+        border:10px solid red;
+        height:100%;
+        width:100%;
+        
+    }
+    .contenedor>div{
+        width:100%;
+    }
+
+    
+</style>
+
+</head>
+<body>
+    <div class="contenedor">
+        <div class="aquamarine">1</div>
+        <div class="blue">2</div>
+        <div class="violet">3</div>
+        <div class="black">4</div>
+        <div class="yellow">5</div>
+        <div class="orange">6</div>
+        <div class="red">7</div>
+        <div class="grey">8</div>
+        <div class="greenyellow">9</div>
+        <div class="green">10</div>
+    </div>
+</body>
+</html>

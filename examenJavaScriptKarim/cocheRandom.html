@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coche Random</title>
+    <style>
+        html{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Coche Random</h1>
+
+<img id="img" src="a" alt="Coche">
+<p id="descripcion"></p>
+<button onclick="eligecoche()">Mostrar Coche Aleatorio</button>
+
+<script>
+    function eligecoche() {
+        var coches = [
+            { nombre: "car1.jpg", descripcion: "Mercedes azul del 1968" },
+            { nombre: "car2.jpg", descripcion: "BMW rojo de 1972" },
+            { nombre: "car3.jpg", descripcion: "Mustang amarillo de 1970" },
+            { nombre: "car4.jpg", descripcion: "Corvette rojo de 1967" },
+            { nombre: "car5.jpg", descripcion: "Citroën blanco de 1971" }
+        ];
+
+        var indice = Math.floor(Math.random() * 5);
+        var cocheSeleccionado = coches[indice];
+
+        document.getElementById("img").src = cocheSeleccionado.nombre;
+        document.getElementById("descripcion").textContent = cocheSeleccionado.descripcion;
+    }
+</script>
+
+</body>
+</html>

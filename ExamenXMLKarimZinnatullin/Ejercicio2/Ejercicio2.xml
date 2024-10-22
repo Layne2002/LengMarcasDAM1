@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE paises SYSTEM "Ejercicio2.dtd">
+<paises>
+    <pais codigo="p1">
+        <nombre>España</nombre>
+        <superficie>504.645 km2</superficie>
+        <frontera codigo="p2">Francia</frontera>
+        <moneda>Euro</moneda>
+        <monedaAntigua>Peseta</monedaAntigua>
+    </pais>
+
+    <pais codigo="p2">
+        <nombre>Francia</nombre>
+        <superficie>675.417 km2</superficie>
+        <frontera codigo="p1">España</frontera>
+        <frontera codigo="p3">Suiza</frontera>
+        <moneda>Euro</moneda>
+        <monedaAntigua>Franco fracés</monedaAntigua>
+    </pais>
+
+    <pais codigo="p3">
+        <nombre>Suiza</nombre>
+        <superficie>41.290 km2</superficie>
+        <frontera codigo="p2">Francia</frontera>
+        <moneda>Franco Suizo</moneda>
+    </pais>
+</paises>

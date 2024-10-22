@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+
+    <style>
+        table {
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 15%;
+            
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width:70%;
+          height:70%;
+          
+        }
+        
+        td, th {
+          border: 5px solid rgb(190, 190, 190);
+          border-style:double;
+          text-align: center;
+          font-size: 15px;
+          padding: 15px;
+        }
+        .Karim{
+        border: 5%;
+        border-color: black;
+        background-color: rgb(136, 252, 252);
+        text-align: center;
+        
+        width: 100%;
+        
+        margin-bottom: 15px;
+        }
+        .Encabezado{
+            text-align: center; background-color:cornflowerblue;
+        }
+        .titulos{
+            background-color: bisque;
+        }
+        .animales{
+            background-color:cadetblue ;
+            color:darkblue
+        }
+        .enpeligro{
+            font-style: italic;
+            color:crimson;
+            background-color: rgb(201, 130, 130);
+        }
+        .seguros{
+            color:rgb(1, 99, 1);
+            background-color: rgb(71, 161, 71);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        </style>
+</head>
+<body>
+    <div class="Karim">
+        Karim Zinnatullin
+    </div>
+    <table>
+        <tr class="Encabezado">
+            
+            <th colspan="4">Animales en peligro de extinción</th>
+        </tr>
+        <tr class="titulos">
+          <td>Nombre</td>
+          <td>Cabezas</td>
+          <td>Previsión 2010</td>
+          <td>Previsión 2020</td>
+          
+        </tr>
+
+        <tr >
+          <td class="animales">Ballena</td>
+          <td class="seguros">6000</td>
+          <td class="seguros">4000</td>
+          <td class="seguros">1500</td>
+        </tr>
+
+        <tr>
+          <td class="animales">Oso pardo</td>
+          <td class="enpeligro">50</td>
+          <td class="enpeligro" colspan="2" rowspan="2">0</td>
+        </tr>
+
+        <tr>
+          <td class="animales">Lince</td>
+          <td class="enpeligro">10</td>
+        </tr>
+
+        <tr>
+          <td class="animales">Tigre</td>
+          <td class="seguros">300</td>
+          <th class="seguros" colspan="2"> 210 </th>
+        </tr>
+
+        
+
+        
+      </table>
+</body>
+</html>

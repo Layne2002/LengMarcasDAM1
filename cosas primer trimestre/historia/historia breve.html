@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<title>Breve historia</title>
+<style>
+    .titulo {
+        color:brown; text-align: center; 
+    }
+    .parrafo1 {
+        color:blueviolet; border-color: blueviolet; float:right;
+    }
+    .parrafo2 {
+        color:coral; border-color: coral; float:left;
+        margin-left: 10%;
+    }
+    .parrafo3{
+        color:darkgreen; border-color:chartreuse; float:right;
+    }
+    div {text-align: center; font-size: 25px;}
+    body{
+        background-color: antiquewhite;
+    }
+    
+    h1 {
+        font-size: 65px; font-style: italic; text-align: center;
+        background-color:orange;
+        padding: 30px;
+        float: center;
+    }
+    h2 {
+        text-align:center; border-style: dashed; margin-right: 30%; margin-left: 30%; padding: 10px; background-color: black;
+    }
+    img{
+        height: 300px; width: 450px; 
+    }
+    .imagen {
+        text-align: center;
+    }
+    .creditos{
+        float:center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 13px;
+        background-color: pink;
+        padding: 20px;
+        text-align: center;
+    }
+    a{
+        color: green;
+        background-color: transparent;
+    }
+    .menu{
+        float:left; background-color: yellow; padding: 30px;
+        
+    }
+
+</style>
+</head>
+<body>
+
+<h1 id="inicio"><span class="titulo">El Adivino</span></h1>
+<div class="menu">
+    <a href="#1">ir al inicio.</a><br>
+    <a href="#2">ir al nudo.</a><br>
+    <a href="#3">ir al desenlace.</a><br>
+</div>
+
+<h2 id="1" class="parrafo1">Inicio</h2>
+<div class="parrafo1">
+    <p> Un adivino estaba trabajando en la plaza del pueblo cuando, de repente,<br>
+        se le acercó un hombre y le advirtió de que las puertas de su casa estaban abiertas<br>
+        y que se habían llevado todo cuanto tenía en su interior.
+    </p>
+</div>
+<p class="imagen" style="padding-left: 15%;"><img src="C:/Users/karim/Desktop/marcas/visualCodeWorkspace/historia/inicio.jpg" alt="Imagen inicio"></p>
+
+<h2 id="2" class="parrafo2" style="margin-left: 35%;">Nudo</h2>
+<div class="parrafo2">
+    <p> El adivino se sobresaltó y fue rápido a su casa para ver lo que había pasado.<br>
+        Uno de sus vecinos, al verlo desesperado, le preguntó:<br>
+        —Escucha, tú que aseguras que eres capaz de predecir lo que le sucederá a los demás,<br>
+        <b>¿por qué no has adivinado lo que te sucedería a ti?</b>
+    </p>
+</div>
+<p class="imagen"><img src="C:/Users/karim/Desktop/marcas/visualCodeWorkspace/historia/nudo.jpg" alt="imagen nudo"></p>
+
+<h2 id="3" class="parrafo3" style="color:chartreuse">Desenlace</h2>
+<div class="parrafo3">
+    <p><b>Moraleja</b>: Nunca faltan personas que pretenden decir a los demás cómo actuar y,<br>
+        sin embargo, <i>son incapaces de manejar sus propios asuntos.</i>
+    </p>
+</div>
+<p class="imagen" style="padding-left: 15%;"><img src="C:/Users/karim/Desktop/marcas/visualCodeWorkspace/historia/moraleja.jpeg" alt="moraleja imagen"></p>
+
+<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+Hazme click para saber que hora es!</button>
+
+<p id="demo"></p>
+
+<a href="#inicio">volver al inicio.</a>
+<footer class="creditos">
+    Autor: Anónimo.<br>
+    Fecha de la hostoria: 2 millones de años a.C.<br>
+    Puedes encontrar más información en ninguna parte.<br>
+    gracias a todos los que han colaborado (yo)
+</footer>
+</body>
+</html>
+

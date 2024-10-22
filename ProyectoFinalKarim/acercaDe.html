@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    
+    <link rel="stylesheet" href="estilo.css">
+    
+    
+</head>
+<body>
+    <header>
+        <h1>Acerca de</h1>
+    </header>
+    <div class="container">
+        <p>Esta página del Hotel Paraiso es un proyecto final de 
+            <br>Lenguaje de Marcas de 1º de DAM hecha por Karim Zinnatullin
+        </p>
+        <p>
+            Consta de 6 páginas(inluyendo esta):
+            <br>Página Principal
+            <br>Reservar habitación
+            <br>Nuestras Instalaciones
+            <br>Atención al Cliente
+            <br>Calcular precio de estancia
+        </p>
+        <h3>Página Principal:</h3>
+        <p>
+            
+            En la página principal tenemos acceso al resto del as páginas mediante botones 
+            <br>que nos llevan a las respectivas webs.
+        </p>
+        <h3>Reservar habitación:</h3>
+        <p>
+            Esta págian contiene un formulario para que un cliente pueda hacer una reserva, eligiendo<br>
+            entre varias habitaciones con precios distintos. Una vez rellenado el formulario,<br>
+            nos muestra un resumen de la reserva.
+        </p>
+        <h3>Nuestras Instalaciones:</h3>
+        <p>
+            En esta página tenemos botones que muestran las diferentes instalaciones del hotel
+        </p>
+        <h3>Atención al cliente:</h3>
+        <p>
+            Aquí podemos enviar diferentes solicitudes, como cambiar fecha de reserva o cancelarla,<br>
+            y también muestra la información de contacto del hotel.
+        </p>
+        <h3>Calcular precio de estancia:</h3>
+        <p>
+            En esa página el cliente puede calcular fácilmente cuánto le saldría<br>
+            quedarse en el hotel, introduciendo el número de noches que va a quedarse <br>
+            y eligiendo la habitación deseada.
+        </p>
+        <div>
+            <button onclick="redirigir('paginaPrincipal.html')">Volver a la Página Principal</button>   
+        </div>
+    </div>
+
+    <script>
+        function redirigir(pagina) {
+            window.location.href = pagina;
+        }
+    </script>
+</body>
+</html>

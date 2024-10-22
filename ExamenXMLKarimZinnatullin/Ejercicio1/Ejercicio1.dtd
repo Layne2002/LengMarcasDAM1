@@ -1,0 +1,7 @@
+<!ELEMENT elementos (elemento*)>
+<!ELEMENT elemento (a, (b | c)*, d+, e?) >
+<!ELEMENT a (#PCDATA)>
+<!ELEMENT b (#PCDATA)>
+<!ELEMENT c (#PCDATA)>
+<!ELEMENT d (#PCDATA)>
+<!ELEMENT e (#PCDATA)>

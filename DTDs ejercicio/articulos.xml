@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE articles SYSTEM "articulos.dtd">
+<articles>
+    <article id="ID">
+        <name>Explicando Interstellar</name>
+        <month>Enero</month>
+        <author name="Stephen King">Christopher Nolan</author>
+        <reviews lang="es">La peor película de la historia de las peliculas</reviews>
+        <feedback>Horrible.</feedback>
+    </article>
+</articles>

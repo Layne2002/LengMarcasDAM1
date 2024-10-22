@@ -1,0 +1,9 @@
+<!ELEMENT paises (pais*)>
+<!ELEMENT pais (nombre,superficie, frontera+, moneda, monedaAntigua?) >
+<!ELEMENT nombre (#PCDATA)>
+<!ATTLIST pais codigo ID #REQUIRED>
+<!ELEMENT superficie (#PCDATA)>
+<!ELEMENT frontera (#PCDATA)>
+<!ATTLIST frontera codigo IDREFS #REQUIRED>
+<!ELEMENT moneda (#PCDATA)>
+<!ELEMENT monedaAntigua (#PCDATA)>

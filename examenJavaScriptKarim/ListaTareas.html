@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <style>
+        html{
+        background-color: antiquewhite;
+    }
+        
+    </style>
+</head>
+<body>
+
+<h1>Lista de tareas</h1>
+
+<form id="formulario">
+    <input type="text" id="input" placeholder="Agregar una tarea">
+    <input type="submit" value="Agregar">
+</form>
+
+<div id="mensaje"></div>
+
+<ul id="listaTareas">
+</ul>
+
+<script>
+    var tareas = [];
+    const mensajeDiv = document.getElementById("mensaje");
+
+    function agregarTarea(tarea) {
+        var index = tareas.indexOf(tarea);
+        if (index === -1) {
+            tareas.push(tarea);
+            mostrarTareas();
+            mostrarMensaje("La tarea se ha agregado con exito.");
+        } else {
+            mostrarMensaje("La tarea ya existe en la posición "+(index+1));
+        }
+    }
+
+    function mostrarTareas() {
+        var lista = document.getElementById("listaTareas");
+        lista.innerHTML = "";
+        tareas.forEach(function(tarea, index) {
+            var li = document.createElement("li");
+            li.textContent = tarea;
+            li.addEventListener("click", function() {li.classList.toggle("completed");});
+            lista.appendChild(li);
+            var button = document.createElement("button");
+            button.textContent = "Eliminar";
+            button.addEventListener("click", function() {
+                tareas.splice(index, 1);
+                mostrarMensaje("Se ha eliminado la tarea.");
+                mostrarTareas();
+            });
+            li.appendChild(button);
+        });
+    }
+
+    document.getElementById("formulario").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        var tarea = document.getElementById("input").value
+            agregarTarea(tarea);
+    }
+    );
+    function mostrarMensaje(texto) {
+            mensajeDiv.innerHTML = texto;
+    }
+</script>
+
+</body>
+</html>

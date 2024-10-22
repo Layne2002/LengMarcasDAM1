@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Compra</title>
+<style>
+    body{
+        background-color: antiquewhite;
+    }
+</style>
+</head>
+<body>
+
+<h2>Lista de Compra</h2>
+
+<form id="tienda">
+    <div>
+        <label for="nombre">Nombre del artículo:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+    </div>
+    <div>
+        <label for="precio">Precio:</label><br>
+        <input type="number" id="precio" name="precio" min="0" step="0.01"><br>
+    </div>
+    <div>
+        <label for="cantidad">Cantidad:</label><br>
+        <input type="number" id="cantidad" name="cantidad" min="1"><br>
+    </div>
+    <div>
+        <button type="button" onclick="agregarArticulo()">Agregar</button>
+    </div>
+</form>
+
+<div id="subtotal"></div>
+
+<button type="button" onclick="finalizarCompra()">Finalizar Compra</button>
+
+<div id="resultado"></div>
+
+<script>
+    let listaCompra = [];
+
+    function agregarArticulo() {
+        let nombre = document.getElementById("nombre").value;
+        let precio = parseFloat(document.getElementById("precio").value);
+        let cantidad = parseInt(document.getElementById("cantidad").value);
+        let subtotal = precio * cantidad;
+
+        listaCompra.push({nombre: nombre, precio: precio, cantidad: cantidad, subtotal: subtotal});
+        
+        document.getElementById("subtotal").innerHTML = "Subtotal: " + subtotal.toFixed(2) + "€";
+    }
+
+    function finalizarCompra() {
+    let total = 0;
+    let resultado = "<h3>Lista de Compra:</h3>";
+    for (let i = 0; i < listaCompra.length; i++) {
+        total += listaCompra[i].subtotal;
+        resultado += listaCompra[i].cantidad + "x " + listaCompra[i].nombre + " - " + listaCompra[i].subtotal.toFixed(2) + "€<br>";
+    }
+    resultado += "<h3>Total: " + total.toFixed(2) + "€</h3>";
+    document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+
+</body>
+</html>

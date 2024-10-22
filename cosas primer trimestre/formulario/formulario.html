@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        
+        label {
+          font-family: arial, sans-serif;
+          font-size: 20px;
+          width:70%
+          
+        }
+        
+        p {
+            font-family: arial, sans-serif;
+            font-size: 20px;
+            
+        }
+        body {
+    background-image: url(https://th.bing.com/th/id/R.4a6342e43db175c5dd0571bbc282d058?rik=ZE9n3pAfKwGyuw&pid=ImgRaw&r=0);
+    }
+        a {
+            font-size: large;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Formulario</h1>
+    
+    <br><a href="https://forms.gle/ZTDbJk9WQ4JqfbBM9">Prefiere hacerlo en google? Pinche aqui!</a>
+    <div style="margin-left: 80px;">
+    <h2>* son obligatorios</h2>
+    <form action="gracias.html" style="color:antiquewhite" method="post">
+        <label for="nombre">Nombre*</label><br>
+        <input type="text" id="nombre" required name="nombre"><br>
+        <label for="apellido1">Primer apellido*</label><br>
+        <input type="text" id="apellido1" required name="apellido1"><br>
+        <label for="apellido2">Segundo apellido</label><br>
+        <input type="text" id="apellido2" name="apellido2"><br>
+        <label for="fechanaci">Fecha de nacimiento*</label><br>
+        <input type="date" id="fechanaci" required name="fechanaci"><br>
+        <label for="correo">email*</label><br>
+        <input type="email" placeholder="ejemplo@correo.com" id="correo" required name="correo"><br>
+        <label for="telef">Número de teléfono*</label><br>
+        <input type="tel" placeholder="123 45 67 89" id="telef" required name="telef"><br>
+        <p>Género:</p>
+        <input type="radio" id="masc" name="genero">
+        <label for="masc">Masculino</label>
+        <input type="radio" id="fem" name="genero">
+        <label for="fem">Femenino</label>
+        <p>Marque la casilla si tiene un 33% o más de discapacidad</p>
+        <input type="checkbox" id="discapacidad" name="discapacidad">
+        <label for="discapacidad">&#9855;</label>
+        <p>Que tipo de discapacidad/es tienes?</p>
+        <input type="checkbox" id="ciego" name="ciego">
+        <label for="ciego" style="font-size:15px">Ceguera total/parcial</label>
+        <input type="checkbox" id="sordo" name="sordo">
+        <label for="sordo" style="font-size:15px">Sordez total/parcial</label>
+        <input type="checkbox" id="minusvalido" name="minusvalido">
+        <label for="minusvalido" style="font-size:15px">Minusvalía</label>
+        <p>Prefiere la tortilla de patata con cebolla o sin cebolla?*</p>
+        <input type="checkbox" id="tortillacon" required name="tortillacon">
+        <label for="tortillacon">Con cebolla</label>
+        <input type="checkbox" id="tortillasin" name="tortillasin" disabled>
+        <label for="tortillasin">Sin cebolla</label><br>
+        <p>Crea su contraseña:</p>
+        <input type="password" id="contraseña" required name="contraseña"><br>
+        <p>Cual es su provincia?*</p>
+        <select required name="Provincia">
+            <option label="------------------------------"></option>
+            <option id="Álava">Álava</option>
+            <option id="Albacete">Albacete</option>
+            <option id="Alicante">Alicante</option>
+            <option id="Almería">Almería</option>
+            <option id="Asturias">Asturias</option>
+            <option id="Ávila">Ávila</option>
+            <option id="Badajoz">Badajoz</option>
+            <option id="Barcelona">Barcelona</option>
+            <option id="Burgos">Burgos</option>
+            <option id="Cáceres">Cáceres</option>
+            <option id="Cádiz">Cádiz</option>
+            <option id="Cantabria">Cantabria</option>
+            <option id="Castellón">Castellón</option>
+            <option id="CiudadReal">Ciudad Real</option>
+            <option id="Córdoba">Córdoba</option>
+            <option id="Cuenca">Cuenca</option>
+            <option id="Gerona">Gerona</option>
+            <option id="Granada">Granada</option>
+            <option id="Guadalajara">Guadalajara</option>
+            <option id="Guipúzcoa">Guipúzcoa</option>
+            <option id="Huelva">Huelva</option>
+            <option id="Huesca">Huesca</option>
+            <option id="IslasBaleares">Islas Baleares</option>
+            <option id="Jaén">Jaén</option>
+            <option id="LaCoruña">La Coruña</option>
+            <option id="LaRioja">La Rioja</option>
+            <option id="LasPalmas">Las Palmas</option>
+            <option id="León">León</option>
+            <option id="Lérida">Lérida</option>
+            <option id="Lugo">Lugo</option>
+            <option id="Madrid">Madrid</option>
+            <option id="Málaga">Málaga</option>
+            <option id="Murcia">Murcia</option>
+            <option id="Navarra">Navarra</option>
+            <option id="Orense">Orense</option>
+            <option id="Palencia">Palencia</option>
+            <option id="Pontevedra">Pontevedra</option>
+            <option id="Salamanca">Salamanca</option>
+            <option id="SantaCruzDeTenerife">Santa Cruz de Tenerife</option>
+            <option id="Segovia">Segovia</option>
+            <option id="Sevilla">Sevilla</option>
+            <option id="Soria">Soria</option>
+            <option id="Tarragona">Tarragona</option>
+            <option id="Teruel">Teruel</option>
+            <option id="Toledo">Toledo</option>
+            <option id="Valencia">Valencia</option>
+            <option id="Valladolid">Valladolid</option>
+            <option id="Vizcaya">Vizcaya</option>
+            <option id="Zamora">Zamora</option>
+            <option id="Zaragoza">Zaragoza</option>
+        </select>
+        <p>Enviar formulario:</p>
+        <input type="submit" value="ENVIAR">
+    </form>
+    <footer>
+        <p style="font-size: 15px;">Esta es una empresa de encuestas que garantiza la privacidad de los usuarios.</p>
+    </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Actor [
+<!ELEMENT Actor ((aname)+, hollywood)>
+<!ELEMENT aname (fname, lname)>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
+<!ELEMENT hollywood (#PCDATA)>
+<!ENTITY UofT SYSTEM "fil.xml">
+]>
+
+<Actor>
+    <aname>
+        <fname>Silvester</fname>
+        <lname>Stallone</lname>
+    </aname>
+    <aname>
+        <fname>Dolores</fname>
+        <lname>Delano</lname>
+    </aname>
+    <hollywood>Hollywood</hollywood>
+</Actor>

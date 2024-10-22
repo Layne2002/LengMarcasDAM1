@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name='parking'>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vehiculo" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="TipoVehiculo" type="TipoVehiculo"/>
+                            <xs:element name="matricula" type="matricula"/>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="socio" type="xs:boolean"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:simpleType name="matricula">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z]{3}[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TipoVehiculo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="coche"/>
+            <xs:enumeration value="moto"/>
+            <xs:enumeration value="patinete"/>
+            <xs:enumeration value="furgo"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

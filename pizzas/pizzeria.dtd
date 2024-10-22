@@ -1,0 +1,6 @@
+<!ELEMENT pizzas (pizza*)>
+<!ELEMENT pizza (ingrediente+)>
+<!ATTLIST pizza nombre CDATA #REQUIRED>
+<!ATTLIST pizza precio CDATA #REQUIRED>
+<!ELEMENT ingrediente EMPTY>
+<!ATTLIST ingrediente nombre CDATA #REQUIRED>
